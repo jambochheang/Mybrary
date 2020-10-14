@@ -1,7 +1,7 @@
-<h2>Search Article</h2>
+<h1>Search Article</h1><br>
 <form action="/books" method="GET">
     <div>
-        <label for="">Title</label>
+        <label for="">Article Title</label>
         <input type="text" name="title" value="<%= searchOptions.title %>">
     </div>  
     <div>
@@ -12,15 +12,9 @@
         <label for="">Published Before</label>
         <input type="date" name="PublishedBefore" value="<%= searchOptions.PublishedBefore %>">
     </div>
-    <button type="submit">Search</button>
+    <button type="submit" class="cta">Search</button>
 </form>
 <br>
-<!-- <div>
-    <% books.forEach(book => { %>
-        <div>Article Title: <%= book.title %></div>
-        <div>Publish Date: <%= book.publishDate.toISOString().split('T')[0] %> </div><br>
-    <% }) %> 
-</div> -->
 
 <style>
     table, th, td {
@@ -35,15 +29,16 @@
 <div>
     <table style="width: 100%;">
         <tr>
-            <th>Article Title</th>
+            <th>Publication Title</th>
             <th>Description</th>
-            <th>Publish Date</th>
+            <th>Publication  Date</th>
         </tr>
         <% books.forEach(book => { %>
         <tr>
             <td><%= book.title %></td>
             <td><%= book.description %></td>
-            <td><%= book.publishDate.toISOString().split('T')[0] %> </td>
+            <td><%= book.publishDate.toISOString().split('T')[0] %></td>
+            <!-- <td><%= book.id %></td> -->
         </tr>
         <% }) %> 
     </table> 

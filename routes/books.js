@@ -38,6 +38,17 @@ router.get('/', async (req, res) => {
     }  
 })
 
+router.get('/moderator', async (req, res) => {
+    try {
+        const books = await Book.find()
+        res.render('books/moderator', {
+                books: books,
+                searchOptions: req.query
+            })
+    } catch{
+        res.redirect('/')
+    }  
+})
 // New Book Route
 router.get('/new', async (req, res) => {
     renderNewPage(res, new Book())
