@@ -27,19 +27,22 @@
     }
 </style>
 <div>
-    <table style="width: 100%;">
+    <table>
         <tr>
             <th>Publication Title</th>
+            <th>Author</th>
             <th>Description</th>
-            <th>Publication  Date</th>
+            <th>DOI</th>
+            <th>Publication Date</th>
         </tr>
         <% books.forEach(book => { %>
         <tr>
             <td><%= book.title %></td>
+            <td><i>Author..</i></td>
             <td><%= book.description %></td>
-            <td><%= book.publishDate.toISOString().split('T')[0] %></td>
-            <!-- <td><%= book.id %></td> -->
+            <td><%= book.publishDate.toISOString().split('T')[0] %> </td>
+            <td><%= book.createdAt.toISOString().split('T')[0] %> </td>
         </tr>
         <% }) %> 
-    </table> 
+    </table>
 </div>
